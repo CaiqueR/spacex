@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spacex/app/util/size_config.dart';
 
 class Button extends StatelessWidget {
   final Function onSubmit;
@@ -34,13 +35,13 @@ class Button extends StatelessWidget {
                 color: secondaryColor,
               )),
           child: Container(
-            height: 30,
+            height: SizeConfig.blockSizeVertical * 2,
             alignment: Alignment.center,
             child: isLoading
                 ? SizedBox(
                     child: CircularProgressIndicator(),
-                    height: 30,
-                    width: 30,
+                    height: SizeConfig.blockSizeVertical * 2,
+                    width: SizeConfig.blockSizeVertical * 2,
                   )
                 : Text(
                     'Login',

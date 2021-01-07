@@ -4,6 +4,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:spacex/app/util/size_config.dart';
 import 'button/button.dart';
 import 'home_controller.dart';
 import 'text_field/text_field_widget.dart';
@@ -30,19 +31,22 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
       isLoading = false;
     });
     if (controller.email != 'test@test.com') {
-      setState(() {
+      return setState(() {
         error = true;
       });
     }
     if (controller.password != 'test') {
-      setState(() {
+      return setState(() {
         error = true;
       });
     }
+
+    return Modular.to.pushNamedAndRemoveUntil('/spacex', (route) => false);
   }
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Scaffold(
       backgroundColor: Color(0xFFFAFAFA),
       appBar: AppBar(
@@ -184,7 +188,7 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                             ),
                             RichText(
                                 text: TextSpan(
-                              style: GoogleFonts.nunitoSans(fontSize: 18),
+                              style: GoogleFonts.nunitoSans(fontSize: 16),
                               children: <TextSpan>[
                                 TextSpan(
                                     text: 'Don’t have an account? Let’s ',

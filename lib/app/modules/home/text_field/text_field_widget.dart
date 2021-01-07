@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spacex/app/util/size_config.dart';
 
 class TextFieldWidget extends StatelessWidget {
   final Function onChange;
@@ -35,9 +36,10 @@ class TextFieldWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    SizeConfig().init(context);
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      height: MediaQuery.of(context).size.height / 8,
+      height: SizeConfig.blockSizeVertical * 13,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(30)),
           color: Colors.white,

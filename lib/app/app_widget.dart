@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:spacex/app/theme/theme.dart';
 
+import 'util/modified_scroll.dart';
+
 class AppWidget extends StatefulWidget {
   @override
   _AppWidgetState createState() => _AppWidgetState();
@@ -30,6 +32,10 @@ class _AppWidgetState extends State<AppWidget> {
       initialRoute: '/',
       onGenerateRoute: Modular.generateRoute,
       debugShowCheckedModeBanner: false,
+      builder: (context, widget) {
+        return ScrollConfiguration(
+            behavior: ScrollBehaviorModified(), child: widget);
+      },
     );
   }
 }
