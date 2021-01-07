@@ -35,7 +35,7 @@ class Button extends StatelessWidget {
                 color: secondaryColor,
               )),
           child: Container(
-            height: SizeConfig.blockSizeVertical * 2,
+            height: SizeConfig.blockSizeVertical * 2.5,
             alignment: Alignment.center,
             child: isLoading
                 ? SizedBox(
