@@ -8,10 +8,35 @@ class HomeController = _HomeControllerBase with _$HomeController;
 
 abstract class _HomeControllerBase with Store {
   @observable
-  int value = 0;
+  String email = '';
+
+  @observable
+  String password = '';
+
+  @observable
+  bool showPass = false;
+
+  @computed
+  bool get isFilledMail => email.isNotEmpty;
+
+  @computed
+  bool get isFilledPass => password.isNotEmpty;
+
+  @computed
+  bool get isFilledMailAndPass => email.isNotEmpty && password.isNotEmpty;
 
   @action
-  void increment() {
-    value++;
+  void setEmail(String newEmail) {
+    email = newEmail;
+  }
+
+  @action
+  void setPassword(String newPassword) {
+    password = newPassword;
+  }
+
+  @action
+  void setShowPass() {
+    showPass = !showPass;
   }
 }
