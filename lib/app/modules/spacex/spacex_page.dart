@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:spacex/app/modules/spacex/tabs/upcoming/upcoming_widget.dart';
 import 'package:spacex/app/util/size_config.dart';
 import 'spacex_controller.dart';
 
@@ -101,7 +103,7 @@ class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
                 Expanded(
                   child: TabBarView(
                     children: [
-                      Icon(Icons.directions_car),
+                      UpcomingWidget(),
                       Icon(Icons.directions_transit),
                       Icon(Icons.directions_bike),
                     ],
