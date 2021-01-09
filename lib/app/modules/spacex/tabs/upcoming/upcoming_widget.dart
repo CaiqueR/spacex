@@ -5,6 +5,7 @@ import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:spacex/app/modules/spacex/card/card.dart';
 import 'package:spacex/app/modules/spacex/tabs/upcoming/upcoming_model.dart';
 import 'package:spacex/app/util/size_config.dart';
 
@@ -108,56 +109,12 @@ class UpcomingWidget extends StatelessWidget {
     return ListView.builder(
       itemCount: upcomingEvents.length,
       itemBuilder: (BuildContext context, int index) {
-        return GestureDetector(
+        return CustomCard(
           onTap: () => showModalBottom(context, upcomingEvents[index]),
-          child: Container(
-            child: Card(
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Padding(
-                padding: EdgeInsets.all(20),
-                child: Row(
-                  children: [
-                    Image(
-                        image: AssetImage(
-                            'assets/rocket${(random.nextInt(5) + 1)}.png')),
-                    SizedBox(
-                      width: SizeConfig.blockSizeHorizontal * 10,
-                    ),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Text(
-                          'LAUNCH',
-                          style: TextStyle(
-                              color: Color(0xFFFF003D),
-                              fontWeight: FontWeight.w600),
-                        ),
-                        Text(
-                          upcomingEvents[index].rocketName,
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 18),
-                        ),
-                        Text(
-                          upcomingEvents[index].shortSiteName,
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(context).shadowColor),
-                        ),
-                        Text(
-                          'Tap to more information',
-                          style: TextStyle(
-                              fontWeight: FontWeight.w600,
-                              color: Theme.of(context).shadowColor),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-            ),
-          ),
+          title: 'LAUNCH',
+          rocket: upcomingEvents[index].rocketName,
+          desc: upcomingEvents[index].shortSiteName,
+          imgUrl: 'assets/rocket${(random.nextInt(5) + 1)}.png',
         );
       },
     );

@@ -1,3 +1,5 @@
+import 'package:spacex/app/modules/spacex/details/details_module.dart';
+
 import 'tabs/rockets/rockets_controller.dart';
 import 'tabs/launches/launches_controller.dart';
 import 'tabs/upcoming/upcoming_controller.dart';
@@ -18,6 +20,7 @@ class SpacexModule extends ChildModule {
   @override
   List<ModularRouter> get routers => [
         ModularRouter(Modular.initialRoute, child: (_, args) => SpacexPage()),
+        ModularRouter('/details', module: DetailsModule()),
       ];
 
   static Inject get to => Inject<SpacexModule>.of();

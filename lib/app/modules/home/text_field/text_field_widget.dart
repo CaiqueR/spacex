@@ -3,6 +3,7 @@ import 'package:spacex/app/util/size_config.dart';
 
 class TextFieldWidget extends StatelessWidget {
   final Function onChange;
+  final Function onSubmit;
   final String label;
   final String placeholder;
   final IconData icon;
@@ -10,8 +11,10 @@ class TextFieldWidget extends StatelessWidget {
   final Widget suffixIcon;
   final bool obscureText;
   final bool haveError;
+  final FocusNode focus;
+  final TextInputAction textInputAction;
 
-  const TextFieldWidget(
+  TextFieldWidget(
       {Key key,
       this.onChange,
       this.label,
@@ -20,7 +23,10 @@ class TextFieldWidget extends StatelessWidget {
       this.colorize = false,
       this.suffixIcon,
       this.obscureText = false,
-      this.haveError = false})
+      this.haveError = false,
+      this.onSubmit,
+      this.focus,
+      this.textInputAction})
       : super(key: key);
 
   Color correctColor(BuildContext context) {
@@ -38,8 +44,8 @@ class TextFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-      height: SizeConfig.blockSizeVertical * 13,
+      padding: EdgeInsets.fromLTRB(20, 15, 20, 5),
+      // height: SizeConfig.blockSizeVertical * 13,
       decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(30)),
           color: Colors.white,
@@ -67,7 +73,10 @@ class TextFieldWidget extends StatelessWidget {
             ],
           ),
           TextField(
+            textInputAction: textInputAction,
             obscureText: obscureText,
+            onSubmitted: onSubmit,
+            focusNode: focus,
             onChanged: onChange,
             decoration: InputDecoration(
                 suffixIcon: suffixIcon,

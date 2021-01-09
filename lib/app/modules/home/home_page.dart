@@ -44,6 +44,8 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
     return Modular.to.pushNamedAndRemoveUntil('/spacex', (route) => false);
   }
 
+  final focus = FocusNode();
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
@@ -112,7 +114,10 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                     children: [
                       Observer(builder: (_) {
                         return TextFieldWidget(
+                          onSubmit: (s) =>
+                              FocusScope.of(context).requestFocus(focus),
                           haveError: error,
+                          textInputAction: TextInputAction.next,
                           colorize: controller.isFilledMail,
                           icon: Feather.mail,
                           label: 'E-Mail',
@@ -125,14 +130,17 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                       ),
                       Observer(builder: (_) {
                         return TextFieldWidget(
+                          focus: focus,
                           haveError: error,
                           obscureText: !controller.showPass,
                           colorize: controller.isFilledPass,
                           suffixIcon: IconButton(
                             onPressed: controller.setShowPass,
-                            icon: Icon(controller.showPass
-                                ? Feather.eye_off
-                                : Feather.eye),
+                            icon: controller.isFilledPass
+                                ? Icon(controller.showPass
+                                    ? Feather.eye_off
+                                    : Feather.eye)
+                                : Container(),
                           ),
                           icon: Feather.lock,
                           label: 'Password',
@@ -151,15 +159,27 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
                         ),
                       ),
                       SizedBox(
-                        height: 25,
+                        height: 35,
                       ),
                       error
-                          ? Text(
-                              'Incorrect e-mail & password combination. Try e-mail: test@test.com and password: test',
-                              style: TextStyle(
-                                  color: Theme.of(context).errorColor,
-                                  fontWeight: FontWeight.bold,
-                                  fontSize: 16),
+                          ? Column(
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                Text(
+                                  'Incorrect e-mail or password.',
+                                  style: TextStyle(
+                                      color: Theme.of(context).errorColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                                Text(
+                                  'Try e-mail: test@test.com and password: test',
+                                  style: TextStyle(
+                                      color: Theme.of(context).errorColor,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16),
+                                ),
+                              ],
                             )
                           : Container(),
                       Expanded(

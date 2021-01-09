@@ -32,6 +32,9 @@ environment:
   sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
+  deep_pick: ^0.5.1
+  share: ^0.6.5+4
+  url_launcher: ^5.7.10
   intl: ^0.16.1
   path_provider: ^1.6.24
   cached_network_image: ^2.5.0

@@ -40,8 +40,8 @@ class Button extends StatelessWidget {
             child: isLoading
                 ? SizedBox(
                     child: CircularProgressIndicator(),
-                    height: SizeConfig.blockSizeVertical * 2,
-                    width: SizeConfig.blockSizeVertical * 2,
+                    height: SizeConfig.blockSizeVertical * 5,
+                    width: SizeConfig.blockSizeVertical * 2.5,
                   )
                 : Text(
                     'Login',

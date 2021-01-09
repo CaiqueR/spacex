@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:graphql_flutter/graphql_flutter.dart';
+import 'package:spacex/app/modules/spacex/tabs/launches/launches_widget.dart';
+import 'package:spacex/app/modules/spacex/tabs/rockets/rockets_widget.dart';
 import 'package:spacex/app/modules/spacex/tabs/upcoming/upcoming_widget.dart';
 import 'package:spacex/app/util/size_config.dart';
 import 'spacex_controller.dart';
@@ -17,13 +19,42 @@ class SpacexPage extends StatefulWidget {
 class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
   //use 'controller' variable to access controller
 
+  Future initialPage() async {
+    await Modular.to.pushNamedAndRemoveUntil('/', (route) => false);
+  }
+
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return DefaultTabController(
       length: 3,
       child: Scaffold(
-        drawer: Drawer(),
+        drawer: Drawer(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              Divider(
+                color: Colors.black38,
+              ),
+              InkWell(
+                onTap: initialPage,
+                child: Padding(
+                  padding: EdgeInsets.all(15.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text('Logout'),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Icon(Feather.log_out)
+                    ],
+                  ),
+                ),
+              )
+            ],
+          ),
+        ),
         backgroundColor: Colors.black,
         appBar: AppBar(
           centerTitle: true,
@@ -35,9 +66,6 @@ class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
                   Feather.search,
                 ),
                 onPressed: () {}),
-            SizedBox(
-              width: 30,
-            ),
           ],
           title: Text(
             widget.title,
@@ -104,8 +132,8 @@ class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
                   child: TabBarView(
                     children: [
                       UpcomingWidget(),
-                      Icon(Icons.directions_transit),
-                      Icon(Icons.directions_bike),
+                      LaunchesWidget(),
+                      RocketsWidget(),
                     ],
                   ),
                 ),
