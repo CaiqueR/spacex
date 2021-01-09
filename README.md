@@ -1,5 +1,5 @@
 <p align="center">
-  <img alt="App running" src="https://s4.gifyu.com/images/outputteste.gif">
+  <img alt="App running" src="https://s4.gifyu.com/images/outputteste.gif" height="800">
 </p>
 
 <p align="center">
