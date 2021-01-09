@@ -1,8 +1,4 @@
-<p align="center">
-  <a href="https://caiquer.github.io/todo_mobx/#/" target="_blank">
-    <img alt="Caique Shoes" src="https://s4.gifyu.com/images/ezgif.com-gif-maker-3386e21f2c9fe059e.gif" height="500">
-  </a>
-</p>
+[![IMAGE ALT TEXT HERE](https://s4.gifyu.com/images/ezgif.com-gif-maker-3386e21f2c9fe059e.gif)](https://www.youtube.com/watch?v=8QzWyf8-g-4)
 
 <p align="center">
   <a href="https://github.com/CaiqueR/spacex/raw/master/spacex.apk" target="_blank">
