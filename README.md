@@ -1,8 +1,19 @@
-[![IMAGE ALT TEXT HERE](https://s4.gifyu.com/images/ezgif.com-gif-maker-3386e21f2c9fe059e.gif)](https://www.youtube.com/watch?v=8QzWyf8-g-4)
+| ![](https://i.ibb.co/61Vz86Y/Screenshot-20210109-173330.jpg) | ![](https://i.ibb.co/kcFK5rj/Screenshot-20210109-173342.jpg) |
+| :----------------------------------------------------------: | :----------------------------------------------------------: |
+| ![](https://i.ibb.co/M8cQbcD/Screenshot-20210109-173347.jpg) | ![](https://i.ibb.co/2KcbbKG/Screenshot-20210109-173356.jpg) |
+| ![](https://i.ibb.co/nDD13dv/Screenshot-20210109-173401.jpg) | ![](https://i.ibb.co/YdrvtJv/Screenshot-20210109-173406.jpg) |
+| ![](https://i.ibb.co/CPdFw7t/Screenshot-20210109-173410.jpg) | ![](https://i.ibb.co/pyTRzdw/Screenshot-20210109-173412.jpg) |
+| ![](https://i.ibb.co/tbqn1Sz/Screenshot-20210109-173415.jpg) |                            ![]()                             |
 
 <p align="center">
   <a href="https://github.com/CaiqueR/spacex/raw/master/spacex.apk" target="_blank">
     <h1>Click to download the app</h1>
+  </a>
+</p>
+
+<p align="center">
+  <a href="https://www.youtube.com/watch?v=8QzWyf8-g-4&feature=youtu.be&ab_channel=CaiqueRibeiro" target="_blank">
+    <h1>Click to see the video of running app</h1>
   </a>
 </p>
 
