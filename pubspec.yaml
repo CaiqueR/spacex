@@ -25,6 +25,7 @@ vars:
 scripts:
   mobx_build: $runner build
   mobx_watch: $clean & $get & $runner watch
+  watch2: $runner watch --delete-conflicting-outputs
   watch: $runner watch
   mobx_build_clean: $clean & $get & $runner build --delete-conflicting-outputs
 
