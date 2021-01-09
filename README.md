@@ -1,5 +1,7 @@
 <p align="center">
-  <img alt="App running" src="https://media.giphy.com/media/KI7CJ982x1PeUzu4TE/giphy.gif">
+  <a href="https://caiquer.github.io/todo_mobx/#/" target="_blank">
+    <img alt="Caique Shoes" src="https://s4.gifyu.com/images/ezgif.com-gif-maker-3386e21f2c9fe059e.gif" height="500">
+  </a>
 </p>
 
 <p align="center">
