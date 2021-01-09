@@ -1,6 +1,6 @@
-<iframe width="420" height="315"
-src="https://github.com/CaiqueR/spacex/raw/master/app_running.mp4">
-</iframe>
+<p align="center">
+  <img alt="App running" src="https://s4.gifyu.com/images/outputteste.gif">
+</p>
 
 <p align="center">
   <a href="https://github.com/CaiqueR/spacex/raw/master/spacex.apk" target="_blank">
