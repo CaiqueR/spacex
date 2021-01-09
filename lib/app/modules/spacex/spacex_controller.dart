@@ -8,10 +8,10 @@ class SpacexController = _SpacexControllerBase with _$SpacexController;
 
 abstract class _SpacexControllerBase with Store {
   @observable
-  int value = 0;
+  int currentTabPage = 0;
 
   @action
-  void increment() {
-    value++;
+  void changeCurrentPage(int newPage) {
+    currentTabPage = newPage;
   }
 }

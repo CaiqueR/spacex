@@ -1,28 +1,28 @@
-![caique-shoes](https://i.imgur.com/s9sMNks.png)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
 
 <p align="center">
   <a href="https://caique-shoes.vercel.app/" target="_blank">
-    <h1>Click to test the application</h1>
+    <h1>Click to download the app</h1>
   </a>
 </p>
 
 <p align="center">
-  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/caiquer/caique-shoes?color=%2304D361">
+  <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/caiquer/spacex?color=%2304D361">
 
-  <img alt="Repository size" src="https://img.shields.io/github/repo-size/caiquer/caique-shoes">
+  <img alt="Repository size" src="https://img.shields.io/github/repo-size/caiquer/spacex">
 
   <a href="https://www.linkedin.com/in/caiquer/">
-    <img alt="Made by leon-carvalho" src="https://img.shields.io/badge/made%20by-Caique Ribeiro-%2304D361">
+    <img alt="Made by Caique" src="https://img.shields.io/badge/made%20by-Caique Ribeiro-%2304D361">
   </a>
 	
   
-  <a href="https://github.com/caiquer/caique-shoes/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/caiquer/caique-shoes">
+  <a href="https://github.com/caiquer/spacex/commits/master">
+    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/caiquer/spacex">
   </a>
 
   <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
-   <a href="https://github.com/caiquer/caique-shoes/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/caiquer/caique-shoes?style=social">
+   <a href="https://github.com/caiquer/spacex/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/caiquer/spacex?style=social">
   </a>
 </p>
 

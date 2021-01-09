@@ -147,7 +147,7 @@ class _DetailsPageState extends ModularState<DetailsPage, DetailsController> {
                     customText(
                         text: 'FIRST STAGE ',
                         subTitle:
-                            'Cores: ${widget.launch.rocket.cores.toString()}'),
+                            'Cores: ${widget.launch.rocket.cores.toString() == 'null' ? 'No details' : widget.launch.rocket.cores.toString()}'),
                     customText(
                         text: 'SECOND STAGE ',
                         subTitle:

@@ -19,18 +19,19 @@ final $SpacexController = BindInject(
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$SpacexController on _SpacexControllerBase, Store {
-  final _$valueAtom = Atom(name: '_SpacexControllerBase.value');
+  final _$currentTabPageAtom =
+      Atom(name: '_SpacexControllerBase.currentTabPage');
 
   @override
-  int get value {
-    _$valueAtom.reportRead();
-    return super.value;
+  int get currentTabPage {
+    _$currentTabPageAtom.reportRead();
+    return super.currentTabPage;
   }
 
   @override
-  set value(int value) {
-    _$valueAtom.reportWrite(value, super.value, () {
-      super.value = value;
+  set currentTabPage(int value) {
+    _$currentTabPageAtom.reportWrite(value, super.currentTabPage, () {
+      super.currentTabPage = value;
     });
   }
 
@@ -38,11 +39,11 @@ mixin _$SpacexController on _SpacexControllerBase, Store {
       ActionController(name: '_SpacexControllerBase');
 
   @override
-  void increment() {
+  void changeCurrentPage(int newPage) {
     final _$actionInfo = _$_SpacexControllerBaseActionController.startAction(
-        name: '_SpacexControllerBase.increment');
+        name: '_SpacexControllerBase.changeCurrentPage');
     try {
-      return super.increment();
+      return super.changeCurrentPage(newPage);
     } finally {
       _$_SpacexControllerBaseActionController.endAction(_$actionInfo);
     }
@@ -51,7 +52,7 @@ mixin _$SpacexController on _SpacexControllerBase, Store {
   @override
   String toString() {
     return '''
-value: ${value}
+currentTabPage: ${currentTabPage}
     ''';
   }
 }

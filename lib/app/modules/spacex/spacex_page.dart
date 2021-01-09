@@ -16,11 +16,34 @@ class SpacexPage extends StatefulWidget {
   _SpacexPageState createState() => _SpacexPageState();
 }
 
-class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
+class _SpacexPageState extends ModularState<SpacexPage, SpacexController>
+    with SingleTickerProviderStateMixin {
   //use 'controller' variable to access controller
+  TabController _tabController;
 
   Future initialPage() async {
     await Modular.to.pushNamedAndRemoveUntil('/', (route) => false);
+  }
+
+  @override
+  void initState() {
+    _tabController = TabController(length: 3, vsync: this);
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _tabController.dispose();
+    super.dispose();
+  }
+
+  @override
+  void didChangeDependencies() {
+    _tabController.addListener(() {
+      setState(() {});
+    });
+    super.didChangeDependencies();
   }
 
   @override
@@ -94,16 +117,22 @@ class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
             child: Column(
               children: [
                 TabBar(
+                  controller: _tabController,
                   indicator: UnderlineTabIndicator(
-                      borderSide:
-                          BorderSide(width: 4, color: Color(0xFFFF003D)),
-                      insets: EdgeInsets.symmetric(horizontal: 100)),
+                      borderSide: BorderSide(
+                        width: 4,
+                        color: Color(0xFFFF003D),
+                      ),
+                      insets: EdgeInsets.symmetric(
+                          horizontal: SizeConfig.blockSizeHorizontal * 8)),
                   tabs: [
                     Tab(
                       child: Text(
                         'Upcoming',
                         style: TextStyle(
-                            color: Color(0xFFFF003D),
+                            color: _tabController.index == 0
+                                ? Color(0xFFFF003D)
+                                : Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: SizeConfig.safeBlockHorizontal * 4),
                       ),
@@ -112,7 +141,9 @@ class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
                       child: Text(
                         'Launches',
                         style: TextStyle(
-                            color: Color(0xFFFF003D),
+                            color: _tabController.index == 1
+                                ? Color(0xFFFF003D)
+                                : Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: SizeConfig.safeBlockHorizontal * 4),
                       ),
@@ -121,7 +152,9 @@ class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
                       child: Text(
                         'Rockets',
                         style: TextStyle(
-                            color: Color(0xFFFF003D),
+                            color: _tabController.index == 2
+                                ? Color(0xFFFF003D)
+                                : Colors.black,
                             fontWeight: FontWeight.bold,
                             fontSize: SizeConfig.safeBlockHorizontal * 4),
                       ),
@@ -130,6 +163,7 @@ class _SpacexPageState extends ModularState<SpacexPage, SpacexController> {
                 ),
                 Expanded(
                   child: TabBarView(
+                    controller: _tabController,
                     children: [
                       UpcomingWidget(),
                       LaunchesWidget(),

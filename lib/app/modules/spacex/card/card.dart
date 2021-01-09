@@ -39,8 +39,8 @@ class CustomCard extends StatelessWidget {
                 SizedBox(
                   width: SizeConfig.blockSizeHorizontal * 10,
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Wrap(
+                  direction: Axis.vertical,
                   children: [
                     Text(
                       title,
