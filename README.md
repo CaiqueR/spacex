@@ -1,7 +1,9 @@
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/YOUTUBE_VIDEO_ID_HERE/0.jpg)](https://www.youtube.com/watch?v=YOUTUBE_VIDEO_ID_HERE)
+<iframe width="420" height="315"
+src="https://github.com/CaiqueR/spacex/raw/master/app_running.mp4">
+</iframe>
 
 <p align="center">
-  <a href="https://caique-shoes.vercel.app/" target="_blank">
+  <a href="https://github.com/CaiqueR/spacex/raw/master/spacex.apk" target="_blank">
     <h1>Click to download the app</h1>
   </a>
 </p>
@@ -30,7 +32,7 @@
 
 ## 💻 About the Project
 
-👟 SpaceX - is a project made for a challenge for an internship position at the Statetial company. The challenge is to replicate these [screens](<https://www.figma.com/file/9rQGYHs4bcXhZWy31BIGZs/SpaceXAppUI-(Copy)?node-id=0%3A1>) and use the SpaceX GraphQL [API](https://api.spacex.land/graphql/) .
+🚀 SpaceX - is a project made for a challenge for an internship position at the Statetial company. The challenge is to replicate these [screens](<https://www.figma.com/file/9rQGYHs4bcXhZWy31BIGZs/SpaceXAppUI-(Copy)?node-id=0%3A1>) and use the SpaceX GraphQL [API](https://api.spacex.land/graphql/) .
 
 ## 🛠 Techs
 
